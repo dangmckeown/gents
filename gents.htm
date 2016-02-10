@@ -1,0 +1,99 @@
+﻿<html>
+
+<head>
+<title>Gents - proof of concept</title>
+
+<style>
+body{background-color: #cddc16;}
+td	{background-repeat: no-repeat;height:100px;width:100px;}
+.stall:hover {background-color: #ffdeeb;}
+.top	{background-image:url('stall_top.png');}
+.bottom	{background-image:url('stall_bottom.png');}
+.left	{background-image:url('stall_left.png');}
+.right	{background-image:url('stall_right.png');}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+<script>
+$( document ).ready(function() {
+
+$(".stall").click(function(){
+
+if (!( this.hasClass( "closed" )) ){
+
+	var taken = this.id;
+	var oneup = taken - 1;
+	var onedown = taken++;
+	$( "#" + onedown ).css("background-color", "#cccccc").addClass("closed");	
+	$("#" + taken).css("background-color", "#cccccc").addClass("closed");
+	$( "#" + oneup ).css("background-color", "#cccccc").addClass("closed");
+
+	// alert(this.classList); //debugging
+
+}
+
+});
+
+});
+
+
+</script>
+
+</head>
+
+<body>
+
+<table>
+
+<tr>
+<td id="1" class="stall bottom"></td>
+<td id="2" class="stall bottom"><img src="blue_team.png" /></td>
+<td id="3" class="stall bottom"></td>
+<td id="4" class="stall bottom"></td>
+<td id="5" class="stall bottom"><img src="yellow_team.png" /></td>
+<td id="6" class="stall bottom"></td>
+<td></td>
+<td id="11" class="stall right"></td>
+
+</tr>
+<tr>
+<td id= "21" class="stall top"></td>
+<td id= "22" class="stall top"></td>
+<td id= "23" class="stall top"></td>
+<td id= "24" class="stall top"><img src="blue_team.png" /></td>
+<td id= "25" class="stall top"></td>
+<td id= "26" class="stall top"></td>
+<td></td>
+<td id="12" class="stall right"><img src="blue_team.png" /></td>
+
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td id="13" class="stall right"></td>
+
+</tr>
+
+<tr>
+<td id= "31" class="stall bottom"><img src="yellow_team.png" /></td>
+<td id= "32" class="stall bottom"></td>
+<td id= "33" class="stall bottom"></td>
+<td id= "34" class="stall bottom"></td>
+<td id= "35" class="stall bottom"></td>
+<td id= "36" class="stall bottom"></td>
+<td></td>
+<td id="14" class="stall right"></td>
+
+</tr>
+
+
+
+</body>
+
+</html>
